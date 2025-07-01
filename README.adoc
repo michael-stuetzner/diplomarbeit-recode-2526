@@ -1,8 +1,5 @@
-:toc: macro
-
-Stützner Michael, Konstantin Öller
-
 = Diplomarbeit - Recode 2025/26
+:toc: macro
 
 toc::[]
 
