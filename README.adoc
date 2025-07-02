@@ -3,6 +3,13 @@
 
 toc::[]
 
+== Techstack
+* Angular v19
+* Typescript
+* VoiceFlow/.... o.Ä.
+* Framer
+* Meta Pixel
+
 == Commit messages
 
 === Message template
