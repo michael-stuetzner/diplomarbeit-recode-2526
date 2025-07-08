@@ -2,7 +2,20 @@
 Autor: Konstantin Öller, Michael Stützner
 :toc: left
 :toc-title: Inhaltsverzeichnis
+// :hide-uri-scheme:
 
 == Michael
+
+=== UI/UX Design
+==== Studien
+Es gibt viele Studien, die sich mit der Benutzerexperience und der Benutzeroberfläche beschäftigen.
+Einige davon sind zu finden auf Google Scholar:
+
+* https://scholar.google.com
+
+Auf einer Website mit dem Namen https://cieden.com/book/sub-atomic[Cieden] werden einige Studien zusammengefasst und geben eine sehr genaue Auskunft
+darüber, wie verschiedene Farben, Schriftarten oder auch Rundungen von Buttons etc. auf eine/n Benutzer/in wirken und
+deren Entscheidungen beeinflussen können.
+
 
 == Konstantin
