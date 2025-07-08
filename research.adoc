@@ -1,0 +1,8 @@
+= Research
+Autor: Konstantin Öller, Michael Stützner
+:toc: left
+:toc-title: Inhaltsverzeichnis
+
+== Michael
+
+== Konstantin
