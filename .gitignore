@@ -11,3 +11,6 @@
 
 # IntelliJ IDEA settings
 .idea
+
+# Docker
+/docker-data/
