@@ -1,13 +1,11 @@
 package at.htl.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "user_data")
 public class UserData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +14,8 @@ public class UserData {
     private LocalDateTime chatStartTime;
     private LocalDateTime chatEndTime;
     private String userName;
+
+    @Enumerated(EnumType.STRING)
     private UserRole userRole;
     private boolean requestedDownload;
     private int FeedbackRating;
