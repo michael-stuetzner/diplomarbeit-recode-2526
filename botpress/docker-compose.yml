@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  botpress:
+    image: botpress/server:12.30.1
+    container_name: botpress
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/botpress/data
+    environment:
+      - BP_PRODUCTION=true
+      - TZ=Europe/Vienna
+    restart: unless-stopped
