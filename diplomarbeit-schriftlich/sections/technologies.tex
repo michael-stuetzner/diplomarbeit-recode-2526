@@ -3,7 +3,7 @@
 \section{Technologie Stack}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{pics/tech-stack.png}
+    \includegraphics[scale=0.4]{pics/tech-stack.png}
     \caption{Technologie Stack}
     \label{fig:concept:tech-stack}
 \end{figure}
@@ -114,6 +114,133 @@ Alternativen auf. Dazu zählen unter anderem:
 
 \section{D3.js}
 
+\setauthor{\firstauthor}
 \section{Nutzerdatenerfassung}
+% Analyse Tools: Microsoft-Clarity, Google-Analytics, Google-Forms (Einbettung in Framer nur theoretisch)
+% Die praktische einbettung mit code etc in erst in Umsetzung
+% Wie werden Daten gesammelt. Datenschutz?
 
-%\ mehr für Funnel
+Die Erfassung von Nutzerdaten stellt eine wichtige Grundlage 
+für die Bewertung der entwickelten Funnel-Strategien dar. Ziel der 
+Nutzerdatenerfassung ist es, das Verhalten der Nutzer:innen während der 
+Interaktion mit den Websites zu analysieren und daraus 
+Rückschlüsse auf die Benutzerfreundlichkeit sowie die Effektivität der 
+jeweiligen Ansätze zu ziehen.
+
+\setauthor{\firstauthor}
+\subsection{Verwendete Tools}
+
+Die gesammelten Daten stammen aus verschiedenen Quellen:
+\begin{itemize}
+    \item \textit{Framer Analytics}
+    \item \textit{Microsoft Clarity}
+    \item \textit{Google Analytics}
+    \item \textit{Google Forms}
+\end{itemize} 
+Diese Tools ermöglichen eine umfassende Erfassung des Nutzerverhaltens.
+
+Quantitative Daten werden hauptsächlich durch die folgenden Tools erfasst:
+\begin{itemize}
+    \item \textit{Framer Analytics}
+    \item \textit{Microsoft Clarity}
+    \item \textit{Google Analytics}
+\end{itemize}
+
+Qualitative Daten werden durch die folgenden Tools erfasst:
+\begin{itemize}
+    \item \textit{Google Forms}
+    \item \textit{Microsoft Clarity}
+\end{itemize}
+
+Das in \textit{Framer} integrierte Analyse-Tool liefert grundlegende 
+Kennzahlen wie Seitenaufrufe und Verweildauer und dient als erste 
+Übersicht über das Nutzerverhalten direkt innerhalb der Entwicklungsumgebung.
+
+Während \textit{Google Analytics} 
+primär zur Erfassung von Kennzahlen wie Seitenaufrufen, Verweildauer auf
+gewissen Unterseiten, Absprungraten und Conversion-Raten eingesetzt wird, 
+bietet \textit{Microsoft Clarity} zusätzliche Einblicke in das konkrete 
+Nutzerverhalten durch Heatmaps sowie visuelle Aufzeichnungen von 
+Nutzerinteraktionen.
+
+Ergänzend dazu wird \textit{Google Forms} verwendet, um 
+subjektive Eindrücke der Testpersonen zu erfassen. Dadurch können 
+qualitative Aspekte wie wahrgenommene Benutzerfreundlichkeit, Vertrauenswürdigkeit 
+und Überzeugungskraft der beiden Funnel-Varianten erhoben werden. Die 
+Kombination dieser Tools bildet die Grundlage für eine 
+umfassende Analyse, da sowohl messbare Nutzungsdaten als auch 
+persönliche Einschätzungen berücksichtigt werden.
+
+%Nochmal drüberlesen und sicherstellen ob es stimmt
+Die Erhebung der Daten erfolgt anonymisiert und ausschließlich zu 
+Analysezwecken im Rahmen dieser Arbeit. Es werden keine personenbezogenen 
+Daten gespeichert oder weiterverarbeitet. Dadurch wird sichergestellt, 
+dass die Anforderungen des Datenschutzes eingehalten werden und die 
+Privatsphäre der Nutzer:innen gewahrt bleibt.
+Sämtliche Optionen in \textit{Google Analytics} und \textit{Microsoft Clarity} werden so
+konfiguriert, dass keine personenbezogenen Daten erfasst oder gespeichert 
+werden.
+
+\setauthor{\firstauthor}
+\subsection{Alternativen zu den verwendeten Tools}
+
+Es gibt verschiedene Alternativen zu den in dieser Arbeit verwendeten 
+Tools, die ebenfalls zur Nutzerdatenerfassung eingesetzt werden können. 
+Dazu gehören:
+
+\begin{itemize}
+    \item \textit{Hotjar}
+    \item \textit{Mixpanel}
+    \item \textit{Matomo}
+\end{itemize}
+
+Diese Tools bieten ähnliche Funktionen wie die verwendeten Tools, 
+wie beispielsweise die Erfassung von Seitenaufrufen, Verweildauer, 
+Absprungraten und Conversion-Raten. Zudem ermöglichen sie die Erstellung 
+von Heatmaps und die Analyse von Nutzerinteraktionen.
+Allerdings wurden die in dieser Arbeit verwendeten Tools aufgrund 
+ihrer spezifischen Funktionen, Benutzerfreundlichkeit und der Möglichkeit, 
+die erhobenen Daten effizient auszuwerten, ausgewählt. Insbesondere die 
+Kombination von \textit{Google Analytics} und \textit{Microsoft Clarity} 
+ermöglicht eine umfassende Analyse des Nutzerverhaltens, während 
+\textit{Google Forms} Einblicke in die subjektiven Eindrücke 
+der Nutzer:innen bietet.
+
+Zudem sind die verwendeten Tools weit verbreitet und gut dokumentiert, was die
+Integration und Nutzung erleichtert.
+
+\setauthor{\firstauthor}
+\subsection{Begründung der Toolauswahl}
+
+Die Auswahl der verwendeten Tools erfolgte auf Basis funktionaler 
+Anforderungen, Benutzerfreundlichkeit sowie der Möglichkeit, die 
+erhobenen Daten effizient auszuwerten.
+
+\textit{Google Analytics} wurde gewählt, da es eine etablierte und 
+weit verbreitete Lösung zur Analyse von Webtraffic darstellt und 
+umfassende quantitative Kennzahlen liefert. Dadurch eignet es sich 
+besonders zur Messung von Conversion-Raten und zur Bewertung der 
+Funnel-Performance.
+
+\textit{Microsoft Clarity} ergänzt diese Daten durch detaillierte 
+Einblicke in das tatsächliche Nutzerverhalten. Die Möglichkeit, 
+Heatmaps sowie visuelle Aufzeichnungen von Nutzerinteraktionen zu analysieren, 
+ermöglicht ein besseres Verständnis dafür, wie Nutzer:innen mit der 
+Website interagieren und an welchen Stellen potenzielle Probleme auftreten.
+
+Das integrierte \textit{Framer Analytics}-Tool wurde zusätzlich genutzt, 
+da es eine einfache und direkte Analyse innerhalb der Entwicklungsumgebung 
+ermöglicht. Dadurch können erste Erkenntnisse ohne zusätzliche Integration 
+externer Tools gewonnen werden.
+
+\textit{Google Forms} wurde eingesetzt, um qualitative Daten zu erheben, 
+die durch Tracking-Tools allein nicht erfasst werden können. 
+Insbesondere subjektive Eindrücke wie Vertrauen, Verständlichkeit und 
+Überzeugungskraft lassen sich nur durch direkte Befragung der Nutzer:innen 
+ermitteln.
+
+Die Kombination der erhobenen Daten ermöglicht 
+eine umfassende Betrachtung des Nutzerverhaltens, da sowohl 
+quantitative als auch qualitative Daten in die Analyse einfließen. 
+Dadurch kann eine objektive Bewertung und ein direkter Vergleich
+der beiden Strategien vorgenommen werden.
