@@ -1,0 +1,10 @@
+Studie:
+Factors Influencing Users' Adoption and Use of Conversational Agents: A Systematic Review
+
+Ausführlichere Zusammenfassung:
+Diese systematische Literaturübersicht analysiert, welche Faktoren die Nutzung und Akzeptanz von Conversational Agents beeinflussen. Die Autoren identifizieren insbesondere wahrgenommene Nützlichkeit, Benutzerfreundlichkeit, Vertrauen, Antwortqualität und Interaktionserlebnis als zentrale Einflussfaktoren. Die Arbeit zeigt, dass Chatbots dann positiv bewertet werden, wenn sie als hilfreich, verständlich und zuverlässig erlebt werden. Umgekehrt sinkt die Akzeptanz, wenn Nutzer:innen den Eindruck haben, dass Antworten unpräzise sind oder das System keinen echten Mehrwert bietet.
+
+Für die Diplomarbeit ist diese Studie besonders wichtig, weil sie zeigt, dass ein Marketing-Chatbot nicht allein durch seine Existenz einen Vorteil bietet. Entscheidend ist, wie gut er gestaltet ist und ob Nutzer:innen in der Interaktion tatsächlich einen Nutzen erkennen. Die Studie schafft damit eine wissenschaftliche Grundlage dafür, warum Faktoren wie Tonalität, Personalisierung und Antwortqualität im Projekt systematisch untersucht werden.
+
+Bedeutung für die Diplomarbeit:
+Die Studie begründet, warum bei der Entwicklung des Chatbots nicht nur die technische Umsetzung, sondern auch Akzeptanzfaktoren wie Vertrauen, Verständlichkeit und wahrgenommener Nutzen berücksichtigt werden müssen.

@@ -1,0 +1,10 @@
+Studie:
+Web Analytics -- The Dominant Problem of Marketing Automation and Sales Funnel
+
+Ausführlichere Zusammenfassung:
+Die Studie befasst sich mit der Rolle von Web Analytics in Marketing-Automation-Prozessen und Sales Funnels. Sie argumentiert, dass Nutzerverhalten entlang digitaler Funnel-Stufen systematisch erfasst werden muss, um beurteilen zu können, wie gut ein Prozess funktioniert. Einzelne Metriken wie Klicks oder Sitzungsdauer sind demnach nur dann aussagekräftig, wenn sie im Zusammenhang mit konkreten Interaktionsschritten interpretiert werden.
+
+Für die Diplomarbeit ist diese Perspektive wichtig, weil sowohl der klassische Funnel als auch der Chatbot nur dann sinnvoll verglichen werden können, wenn ihre Nutzung messbar gemacht wird. Es reicht nicht, eine subjektive Einschätzung der Systeme vorzunehmen; vielmehr müssen Kennzahlen wie Verweildauer, Anzahl der Nachrichten, Conversion-Signale oder Feedback-Werte in den Gesamtkontext des Nutzungsverlaufs eingeordnet werden.
+
+Bedeutung für die Diplomarbeit:
+Die Studie liefert die Grundlage dafür, Nutzerverhalten nicht nur aufzuzeichnen, sondern entlang des Funnels bzw. des Dialogverlaufs analytisch zu interpretieren.

@@ -1,0 +1,10 @@
+Studie:
+How Persuasive Is Personalized Advertising? A Meta-Analytic Review of Experimental Evidence of the Effects of Personalization on Ad Effectiveness
+
+Ausführlichere Zusammenfassung:
+Diese Meta-Analyse fasst Ergebnisse aus 53 experimentellen Studien zusammen und untersucht, wie sich personalisierte Werbung im Vergleich zu generischer Werbung auf die Werbewirkung auswirkt. Die Autoren zeigen, dass personalisierte Werbebotschaften im Durchschnitt wirksamer sind als nicht personalisierte Botschaften. Besonders deutlich sind die positiven Effekte bei Einstellungen gegenüber der Werbung sowie bei Verhaltensintentionen. Als zentraler Wirkmechanismus wird die erhöhte wahrgenommene Relevanz der Botschaft genannt.
+
+Für die Diplomarbeit ist diese Studie besonders wertvoll, weil sie einen starken empirischen Beleg dafür liefert, dass zielgruppenspezifische Kommunikation messbare Vorteile haben kann. Dieser Befund ist sowohl für den Multi-Step-Funnel als auch für den Chatbot relevant. Wenn Informationen besser auf die jeweilige Zielgruppe abgestimmt sind, steigt die Wahrscheinlichkeit, dass die Botschaft als wichtig, passend und überzeugend wahrgenommen wird.
+
+Bedeutung für die Diplomarbeit:
+Diese Studie ist die wichtigste theoretische Grundlage dafür, warum Zielgruppenspezialisierung und Personalisierung im Projekt untersucht werden.

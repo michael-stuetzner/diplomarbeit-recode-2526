@@ -1,0 +1,10 @@
+Studie:
+What (de) Motivates Customers to Use AI-Powered Conversational Agents for Shopping? The Extended Behavioral Reasoning Perspective
+
+Ausführlichere Zusammenfassung:
+Diese Studie untersucht, warum Nutzer:innen AI-basierte Conversational Agents in shoppingnahen Kontexten verwenden oder bewusst vermeiden. Zu den positiven Einflussfaktoren zählen wahrgenommene Nützlichkeit, Interaktivität, bequemer Informationszugang und das Gefühl, im Entscheidungsprozess unterstützt zu werden. Gleichzeitig identifiziert die Studie auch negative Einflussfaktoren wie Unsicherheit, störende Interaktion, mangelnde Kontrolle und Zweifel an der Verlässlichkeit der Antworten.
+
+Für die Diplomarbeit ist diese Arbeit wichtig, weil sie verdeutlicht, dass ein Marketing-Chatbot nicht automatisch als hilfreich erlebt wird. Vielmehr hängt die Wirkung davon ab, ob er konkrete Vorteile schafft und gleichzeitig mögliche Hürden reduziert. Gerade im Kontext der App-Vermarktung ist das zentral, da Nutzer:innen möglichst ohne Frustration oder Irritation durch den Informationsprozess geführt werden sollen.
+
+Bedeutung für die Diplomarbeit:
+Die Studie unterstützt die Annahme, dass ein Chatbot nur dann zur Nutzergewinnung beiträgt, wenn er relevante Informationen liefert und gleichzeitig negative Nutzungserfahrungen minimiert.

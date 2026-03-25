@@ -1,0 +1,10 @@
+Studie:
+Users' Experiences with Chatbots: Findings from a Questionnaire Study
+
+Ausführlichere Zusammenfassung:
+Die Studie untersucht, welche Erfahrungen Nutzer:innen in der Praxis mit Chatbots machen. Positive Erfahrungen entstehen vor allem dann, wenn Chatbots schnell helfen, klar antworten und konkrete Probleme effizient lösen. Negative Erfahrungen treten insbesondere dann auf, wenn Chatbots Fragen missverstehen, unpassende Standardantworten geben oder Nutzer:innen in Sackgassen führen. Die Autoren unterscheiden dabei zwischen funktionalen Aspekten wie Effizienz und emotionalen Aspekten wie Frustration oder wahrgenommener Natürlichkeit der Interaktion.
+
+Für die Diplomarbeit ist diese Studie deshalb relevant, weil sie direkt auf die Gestaltung des Jobbing-Chatbots übertragbar ist. Sie zeigt, dass ein Chatbot nicht nur „freundlich klingen“ darf, sondern vor allem sinnvoll auf Nutzereingaben reagieren muss. Gleichzeitig bestätigt sie, dass die Qualität der Interaktion einen direkten Einfluss auf die Nutzerzufriedenheit hat.
+
+Bedeutung für die Diplomarbeit:
+Die Studie liefert konkrete Hinweise darauf, welche Eigenschaften eines Chatbots die User Experience verbessern und welche typischen Probleme bei der Gestaltung vermieden werden sollten.

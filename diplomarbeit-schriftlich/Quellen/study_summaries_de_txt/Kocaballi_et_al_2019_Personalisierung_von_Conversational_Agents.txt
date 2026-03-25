@@ -1,0 +1,10 @@
+Studie:
+The Personalization of Conversational Agents in Health Care: Systematic Review
+
+Ausführlichere Zusammenfassung:
+Die Studie untersucht in Form eines systematischen Reviews, wie Conversational Agents personalisiert werden und welche Effekte diese Personalisierung haben kann. Die Autoren zeigen, dass Personalisierung beispielsweise über Namen, Nutzungspräferenzen, Rollenbezug oder individuelle Gesprächsverläufe erfolgen kann. Dabei wird deutlich, dass personalisierte Interaktionen häufig mit höherer Nutzerzufriedenheit, stärkerem Engagement und einer höheren wahrgenommenen Relevanz verbunden sind.
+
+Besonders interessant ist, dass die Studie auch darauf hinweist, dass Personalisierung zwar häufig als sinnvoll angenommen wird, aber in vielen Systemen nur unzureichend evaluiert wird. Genau daraus ergibt sich für die Diplomarbeit ein wichtiger Forschungsansatz: Personalisierung soll nicht einfach nur eingebaut, sondern systematisch getestet werden.
+
+Bedeutung für die Diplomarbeit:
+Die Studie liefert eine direkte wissenschaftliche Grundlage dafür, Personalisierung als zentrale Versuchsvariable im Chatbot zu betrachten.
