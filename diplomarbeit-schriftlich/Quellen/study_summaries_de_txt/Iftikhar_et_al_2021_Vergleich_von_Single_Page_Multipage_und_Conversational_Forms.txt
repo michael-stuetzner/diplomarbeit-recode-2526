@@ -1,0 +1,10 @@
+Studie:
+Comparing Single-Page, Multipage, and Conversational Digital Forms in Health Care: Usability Study
+
+Ausführlichere Zusammenfassung:
+Diese Studie vergleicht drei Interaktionsformen: einseitige Formulare, mehrseitige Formulare und konversationelle Formulare. Das Ergebnis zeigt, dass konversationelle Interfaces nicht automatisch in allen Dimensionen überlegen sind. Je nach betrachteter Metrik, beispielsweise Usability, Effizienz oder wahrgenommene Einfachheit, können traditionelle Formate ähnlich gut oder teilweise besser abschneiden. Die Studie ist deshalb besonders interessant, weil sie der verbreiteten Annahme widerspricht, dass dialogische Interaktion grundsätzlich benutzerfreundlicher ist.
+
+Für die Diplomarbeit ist diese Erkenntnis sehr wichtig. Sie begründet, warum der Vergleich zwischen Multi-Step-Funnel und Chatbot nicht mit einer Vorannahme geführt werden sollte. Stattdessen muss anhand realer Nutzungsdaten geprüft werden, welches Konzept im konkreten Anwendungsfall besser funktioniert.
+
+Bedeutung für die Diplomarbeit:
+Die Studie unterstützt eine neutrale, empirische Gegenüberstellung von Chatbot und Multi-Step-Funnel und zeigt, dass die Wirksamkeit dialogischer Systeme nicht vorausgesetzt werden darf.

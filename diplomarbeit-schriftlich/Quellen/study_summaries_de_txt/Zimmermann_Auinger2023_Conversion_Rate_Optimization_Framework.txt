@@ -1,0 +1,10 @@
+Studie:
+Developing a Conversion Rate Optimization Framework for Digital Retailers -- Case Study
+
+Ausführlichere Zusammenfassung:
+Diese Fallstudie beschreibt ein strukturiertes Vorgehen zur Conversion Rate Optimierung in digitalen Umgebungen. Im Mittelpunkt stehen die Analyse von Nutzerwegen, das Erkennen von Reibungspunkten und die schrittweise Verbesserung digitaler Touchpoints auf Basis messbarer Daten. Die Autoren betonen, dass Conversion-Optimierung kein einmaliger Designschritt ist, sondern ein iterativer Prozess aus Analyse, Anpassung und erneuter Evaluation.
+
+Für die Diplomarbeit ist dies besonders relevant, weil das Projekt ebenfalls auf datenbasierte Optimierung abzielt. Sowohl der Chatbot als auch der Funnel sollen nicht nur gebaut, sondern hinsichtlich ihrer Wirkung bewertet werden. Die Studie hilft dabei, diesen Prozess methodisch als Optimierungsproblem zu verstehen.
+
+Bedeutung für die Diplomarbeit:
+Die Studie stützt die Annahme, dass die Qualität digitaler Nutzerführung am besten durch iterative, datenbasierte Verbesserung beurteilt und erhöht werden kann.
