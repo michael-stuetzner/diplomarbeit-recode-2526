@@ -120,7 +120,136 @@ verstehen, worum es geht und welche Handlung von ihnen erwartet wird.
 \end{figure}
 
 \subsubsection{Erstellung der Funnel-Seiten}
+
+Die Funnel-Seiten sind so aufgebaut, dass die Nutzer:innen 
+Schritt für Schritt durch ihren Entscheidungsprozess geleitet werden. 
+Es wurde besonders Wert auf Struktur, Klarheit und eine reduzierte, 
+zielgerichtete Informationsvermittlung gelegt.
+
+Die erste Funnel-Seite basiert auf einem Problem-Lösungs-Ansatz, wie in 
+Abbildung \ref{fig:impl:problemloesung} dargestellt. Zu Beginn werden typische 
+Probleme der Zielgruppe angesprochen, wie etwa unflexible Arbeitszeiten oder die 
+fehlende Übersicht über kurzfristige Jobs. Diese Darstellung dient dazu, 
+bei den Nutzer:innen ein Gefühl der Wiedererkennung zu erzeugen und die 
+Relevanz der Inhalte zu erhöhen.
+
+Direkt darauf folgen die konkreten Lösungen, die die App bereithält. 
+Durch die Gegenüberstellung von Problem und Lösung können die Nutzer:innen 
+sofort erkennen, wo der Mehrwert der App für sie liegt.
+Durch die Verwendung von klar strukturierten Listen sowie unterstützenden Icons wird 
+die Lesbarkeit verbessert und die Inhalte können schneller verarbeitet werden.
+
+Zusätzlich wird durch die visuelle Trennung von Problem- und Lösungsbereich 
+eine klare inhaltliche Struktur geschaffen. Ein Pfeil zwischen den beiden 
+Bereichen verstärkt dabei die lineare Nutzerführung und signalisiert den 
+Übergang von Problem zu Lösung.
+
+Am Ende der Seite befindet sich ein Call-to-Action-Button mit dem Text 
+„Warum du Jobbing vertrauen kannst“. Dieser vermittelt Sicherheit und 
+Vertrauen und schafft einen nahtlosen Übergang zur nächsten Funnel-Seite.
+Dabei wurde gezielt der Name der App, \textit{Jobbing}, verwendet und auf eine 
+Formulierung mit „uns“ verzichtet. Dadurch wird die App als eigenständige 
+Lösung präsentiert. Zu diesem Zeitpunkt im Funnel sind die Nutzer:innen 
+zwar bereits mit dem Konzept der App vertraut, jedoch noch nicht mit dem 
+Unternehmen dahinter.
+
+Nach der Darstellung der Lösung folgt eine zweite Funnel-Seite, die sich 
+auf den Aufbau von Vertrauen konzentriert. Wie in den Abbildungen 
+\ref{fig:impl:vertrauen1} und \ref{fig:impl:vertrauen2} dargestellt, werden 
+hier gezielt Informationen präsentiert, die mögliche Unsicherheiten der 
+Nutzer:innen reduzieren sollen.
+
+Zunächst wird hervorgehoben, dass es sich um ein reales Unternehmen mit 
+langfristiger Ausrichtung handelt. Dies wird zusätzlich unterstützt
+durch nationale Bezüge. 
+Anschließend wird betont, dass die Nutzung der App für 
+Arbeitskräfte immer kostenlos ist. Diese Information wird durch kurze, prägnante 
+Aussagen wie „Keine Gebühren“, „Keine Abos“ und „Keine versteckten Kosten“ 
+klar kommuniziert. Wichtig ist hierbei die Farbwahl der Texte.
+Ausschlaggebende Wörter wie „kostenlos“ und „keine“ werden in einem kräftigen 
+Blau, wie in der Abbildung \ref{fig:impl:companycolors} dargestellt, um die Aufmerksamkeit 
+der Nutzer:innen gezielt auf diese wichtigen Informationen zu lenken.
+
+Darüber hinaus werden konkrete Zukunftsziele dargestellt, um die 
+Langfristigkeit und Skalierbarkeit des Systems zu verdeutlichen. Kennzahlen 
+wie die geplante Anzahl an Arbeitskräften und Unternehmen bis zu einem
+bestimmten Zeitpunkt dienen dabei als Vertrauensfaktoren und vermitteln 
+realistische, greifbare und ehrliche Vorstellungen.
+
+Die Gestaltung der Funnel-Seiten folgt insgesamt einem linearen Aufbau, bei 
+dem jede Sektion eine spezifische Funktion im Entscheidungsprozess erfüllt. 
+Während die erste Seite Aufmerksamkeit und Interesse erzeugt, dient die 
+zweite Seite primär dem Aufbau von Vertrauen. Durch diese schrittweise 
+Informationsvermittlung wird die kognitive Belastung reduziert und die 
+Wahrscheinlichkeit einer Conversion erhöht.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{pics/problem-loesung.png}
+    \caption{Erste Funnel-Seite mit Problem-Lösungs-Ansatz}
+    \label{fig:impl:problemloesung}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pics/vertrauen1.png}
+        \caption{Erster Abschnitt der zweiten Funnel-Seite - Vertrauensaufbau}
+        \label{fig:impl:vertrauen1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pics/vertrauen2.png}
+        \caption{Zweiter Abschnitt der zweiten Funnel-Seite - Vertrauensaufbau}
+        \label{fig:impl:vertrauen2}
+    \end{minipage}
+
+\end{figure}
+
 \subsubsection{Responsiveness}
+Um in \textit{Framer} eine bereits erstellte Website responsiv zu gestalten,
+können \textit{Breakpoints} verwendet werden. Breakpoints ermöglichen 
+es, das Layout und die Gestaltung der Website an verschiedene 
+Bildschirmgrößen anzupassen.
+
+Für selbst erstellte Assets, wie etwa den Footer oder die
+Navigationsleiste, können Varianten, wie in Abbildung \ref{fig:impl:variantenfooter} 
+dargestellt, erstellt werden, um die Darstellung auf verschiedenen 
+Geräten zu optimieren.
+So ist es beispielsweise möglich, in der Desktop-Variante mehr
+Links im Footer anzuzeigen, während in der Mobile-Variante nur die 
+wichtigsten Links dargestellt werden.
+
+In Abbildung \ref{fig:impl:breakpoints} sind die Desktop- und die 
+Mobile-Version der Landingpage dargestellt.
+
+Bei der Gestaltung der responsiven Varianten wurde besonders darauf geachtet,
+die Benutzerfreundlichkeit auf kleineren Bildschirmen zu gewährleisten. 
+Hierbei werden Inhalte vertikal angeordnet und etwas größere Abstände zwischen 
+Elementen verwendet, um eine bessere Lesbarkeit und Bedienbarkeit zu ermöglichen.
+
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pics/breakpoints.png}
+        \caption{Desktop- und Mobile-Version der Landingpage}
+        \label{fig:impl:breakpoints}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{pics/variantenfooter.png}
+        \caption{Varianten des Footers für verschiedene Bildschirmgrößen}
+        \label{fig:impl:variantenfooter}
+    \end{minipage}
+
+\end{figure}
+
 \subsubsection{Probleme bei der Erstellung}
 
 \setauthor{\secondauthor}
