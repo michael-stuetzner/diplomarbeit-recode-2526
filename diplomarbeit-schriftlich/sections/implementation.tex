@@ -250,7 +250,7 @@ Elementen verwendet, um eine bessere Lesbarkeit und Bedienbarkeit zu ermögliche
 
 \end{figure}
 
-\subsubsection{Probleme bei der Erstellung}
+%TODO: \subsubsection{Probleme bei der Erstellung}
 
 \setauthor{\secondauthor}
 \section{Chatbot}
@@ -258,6 +258,69 @@ Elementen verwendet, um eine bessere Lesbarkeit und Bedienbarkeit zu ermögliche
 
 \setauthor{\firstauthor}
 \subsection{Integration des Chatbots in die Website}
+\subsubsection{Einstellungen in Voiceflow}
+Für die Integration des Chatbots in die Website wurden die in 
+Abbildung \ref{fig:impl:chatbotsettings} dargestellten Einstellungen 
+in \textit{Voiceflow} vorgenommen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{pics/settings-chatbot-imbed.png}
+    \caption{Einstellungen zur Einbettung des Chatbots}
+    \label{fig:impl:chatbotsettings}
+\end{figure}
+
+Der Chatbot wurde im Modus \textit{Chat} umgesetzt, da dieser eine 
+textbasierte Interaktion ermöglicht und somit den Erwartungen der 
+Nutzer:innen auf einer Website entspricht. Eine Sprachsteuerung wurde 
+bewusst nicht eingesetzt, da diese in diesem Kontext als ungewohnt,
+eher unpraktisch und anstrengend wahrgenommen werden könnte.
+
+Als Darstellungsform wurde die Option \textit{Popover} gewählt. Dabei 
+wird der Chatbot als überlagerndes Element in Form eines zusätzlichen 
+Fensters über der bestehenden Website dargestellt, ohne deren Struktur 
+zu unterbrechen. Diese Form der Integration ermöglicht es den Nutzer:innen, 
+den Chatbot jederzeit zu öffnen oder zu schließen, ohne den aktuellen 
+Kontext zu verlieren.
+
+Im Vergleich dazu würde bei der Option \textit{Widget} der Chatbot lediglich 
+als kleines Element am Rand der Seite erscheinen, wodurch die Sichtbarkeit 
+reduziert wird. 
+Da im Rahmen dieser Arbeit der Fokus gezielt auf der Interaktion mit dem 
+Chatbot liegt, wurde die Popover-Variante gewählt, um eine höhere 
+Aufmerksamkeit und eine intensivere Auseinandersetzung mit dem System 
+zu fördern.
+
+Die Option \textit{Stream text} wurde aktiviert, wodurch Antworten des 
+Chatbots schrittweise angezeigt werden. Dies vermittelt den Eindruck 
+einer aktiven Kommunikation und erhöht die wahrgenommene Natürlichkeit 
+der Interaktion. Wäre diese Option deaktiviert, würden Antworten immer sofort 
+vollständig angezeigt, was zu einer weniger dynamischen und eher statischen 
+Nutzererfahrung führen kann.
+
+Die Diktierfunktion wurde ebenfalls aktiviert, um Nutzer:innen die 
+Möglichkeit zu geben, ihre Eingaben alternativ per Sprache vorzunehmen. 
+Dadurch wird die Barrierefreiheit erhöht und unterschiedliche 
+Nutzungspräferenzen werden berücksichtigt.
+
+Die Audioausgabe wurde aktiviert, sodass Antworten des Chatbots optional 
+vorgelesen werden können. Dies unterstützt insbesondere Nutzer:innen, die 
+visuelle Inhalte weniger intensiv wahrnehmen können oder möchten.
+
+Der Voice-Mode wurde hingegen deaktiviert, da dieser eine kontinuierliche 
+Sprachinteraktion erfordert und für den Anwendungsfall dieser Website nicht 
+notwendig ist. Zudem könnte eine permanente Sprachaktivierung als störend 
+empfunden werden.
+
+Insgesamt wurde bei der Konfiguration des Chatbots darauf geachtet, eine 
+möglichst flexible und intuitive Interaktion zu ermöglichen, ohne 
+die Nutzer:innen zu überfordern oder vom eigentlichen Ziel der 
+Website abzulenken.
+
+\subsubsection{Einbettung in die Website}
+%TODO: Code snippets zur Integration des Chatbots in die Website
+%TODO: Erklärung, wie die Integration funktioniert
+%TODO: Probleme
 
 \setauthor{\firstauthor}
 \section{Hosting}
