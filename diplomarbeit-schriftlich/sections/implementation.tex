@@ -500,12 +500,143 @@ die Nutzer:innen zu überfordern oder vom eigentlichen Ziel der
 Website abzulenken.
 
 \subsubsection{Einbettung in die Website}
-%TODO: Code snippets zur Integration des Chatbots in die Website
-%TODO: Erklärung, wie die Integration funktioniert
-%TODO: Probleme
+Der Code aus dem Listing \ref{lst:impl:chatbotintegration} wurde
+in Framer in den Einstellungen im Tab \textit{Custom Code} eingefügt.
+
+Teile des im Listing \ref{lst:impl:chatbotintegration} dargestellten Codes 
+werden von \textit{Voiceflow} automatisch zur Verfügung gestellt. 
+Dabei handelt es sich insbesondere um das Einbinden des Chatbot-Skripts 
+sowie die Initialisierung des Chatbots innerhalb der Website.
+
+Der bereitgestellte Code wurde jedoch an die Anforderungen dieser Arbeit 
+angepasst. Insbesondere wurde das Styling des Buttons so verändert, dass 
+dieser sich visuell in das bestehende Design der Website integriert und 
+der Corporate Identity entspricht. Der Button wurde bewusst auffällig 
+gestaltet, um als Call-to-Action wahrgenommen zu werden und die Interaktion 
+mit dem Chatbot zu fördern.
+
+Standardmäßig kann der Chatbot ausschließlich über ein kleines Widget im 
+linken unteren Bereich der Website geöffnet werden. Diese Form der 
+Interaktion ist zwar funktional, jedoch nicht optimal in den 
+Multi-Step-Funnel integriert, da sie leicht übersehen werden kann und 
+nicht aktiv zur Interaktion auffordert.
+
+Aus diesem Grund wurde zusätzlich ein eigener Button mit der Aufschrift 
+„Im Chat mehr erfahren“ implementiert, der das Popover des Chatbots 
+öffnet. Technisch erfolgt dies über einen Event-Listener, der beim Klick 
+auf den Button die Funktion \textit{window.voiceflow.chat.open()} ausführt.
+
+Durch diese Anpassung wird der Chatbot direkt in den 
+Funnel integriert und nicht nur als optionales Element am Rand der 
+Website dargestellt. Dies erhöht die Sichtbarkeit und senkt gleichzeitig 
+die Einstiegshürde für die Nutzung des Chatbots.
+
+Darüber hinaus trägt diese Lösung zu einer intuitiveren Bedienung bei, da 
+Nutzer:innen gewohnt sind, Funktionen über klar erkennbare 
+Buttons auszulösen. Die Integration eines expliziten Call-to-Action-Buttons 
+unterstützt somit die Nutzerführung.
+
+\begin{lstlisting}[
+    language=HTML,
+    caption=Code zur Integration des Chatbots in die Website,
+    label=lst:impl:chatbotintegration
+]
+<!-- Voiceflow Chat Loader -->
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '69a9c13ecc9ea72b7ed9e86f' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+        });
+      };
+      s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+<!-- Button Styles -->
+<style>
+  button {
+    background-color: #0085FF;
+    color: white;
+    border: none;
+    padding: 10px 60px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease, text-decoration 0.2s ease;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  // Select the only button on the page
+  const btn = document.querySelector("button");
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      if (window.voiceflow && window.voiceflow.chat) {
+        window.voiceflow.chat.open?.();
+      } else {
+        console.warn("Voiceflow script not loaded yet.");
+      }
+    });
+  }
+</script>
+\end{lstlisting}
 
 \setauthor{\firstauthor}
 \section{Hosting}
+Für das Hosting der beiden Website-Varianten wurde der in \textit{Framer} 
+integrierte Hosting-Service verwendet. Diese Entscheidung wurde getroffen, 
+da dadurch die Veröffentlichung der in \textit{Framer} erstellten Websites 
+ohne zusätzlichen Konfigurationsaufwand möglich ist. Änderungen an Layout, 
+Inhalten oder Interaktionen können direkt aus der Entwicklungsumgebung 
+veröffentlicht werden, wodurch der Deploy-Prozess vereinfacht wird. 
+Zudem basiert die Plattform auf \textit{Amazon Web Services (AWS)}.
+
+Eine eigene Domain wurde im Rahmen dieser Arbeit nicht vergeben. Stattdessen 
+wurden die von \textit{Framer} generierten Subdomains verwendet. 
+Dadurch konnte die technische Einrichtung möglichst simpel gehalten werden und der 
+Fokus wurde auf die Konzeption, Gestaltung und Evaluation der beiden Funnel-Strategien 
+gelegt. Die veröffentlichte Multi-Step-Funnel-Variante ist unter der 
+von Framer generierten Domain \texttt{charismatic-fruit-222100.framer.app} 
+erreichbar. Die Chatbot-Variante wurde unter der Domain 
+\texttt{decisive-article-336335.framer.app} veröffentlicht.
+
+Ein weiterer Vorteil dieser Hosting-Lösung besteht darin, dass Veröffentlichung 
+und Versionierung direkt innerhalb von \textit{Framer} erfolgen. 
+Wodurch bei Bedarf auf frühere Versionen 
+zurückgegriffen werden kann. Dies ist insbesondere im Rahmen 
+einer iterativen Umsetzung vorteilhaft, da Anpassungen 
+mehrfach getestet und veröffentlicht werden können.
+Die Veröffentlichung findet über einen einzigen knopfdruck direkt
+in der Entwicklungsumgebung statt. DIe Schaltfläche wird in
+Abbildung \ref{fig:impl:publishsite} dargestellt.
+
+Die Wahl des integrierten Hostings war somit vor allem aus Komfort
+Gründen sinnvoll. Da keine separate Serverinfrastruktur 
+eingerichtet werden musste, konnte der technische Aufwand reduziert und die 
+Umsetzung der beiden Vergleichsvarianten effizient durchgeführt werden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{pics/publish-site-ui.png}
+    \caption{Schaltfläche in \textit{Framer} zur Veröffentlichung der Website}
+    \label{fig:impl:publishsite}
+\end{figure}
 
 \setauthor{\firstauthor}
 \section{Datenerfassung}
