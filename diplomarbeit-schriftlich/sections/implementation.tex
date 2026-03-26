@@ -254,7 +254,189 @@ Elementen verwendet, um eine bessere Lesbarkeit und Bedienbarkeit zu ermögliche
 
 \setauthor{\secondauthor}
 \section{Chatbot}
-\subsection{Erstellung des Chatbots}
+
+\subsection{Ziel des Chatbots}
+
+Der Chatbot wurde als Voiceflow Agent implementiert und in die Website integriert.
+
+\subsection{Grundstruktur des Chatbots}
+
+Zu Beginn des Gesprächs werden im Hintergrund 3 Variablen festgelegt.
+\begin{itemize}
+    \item Der aktuelle Time-Stamp um die Gesprächsdauer später berechnen zu können.
+    \item Eine boolsche Variable die festlegt, ob der Agent höflich oder informell kommuniziert.
+    \item Eine boolsche Variable die festlegt, ob der Agent personalisiert oder unpersonalisiert kommuniziert.
+\end{itemize} 
+
+Die Konversation wurde in mehrere funktionale Bereiche gegliedert. Zu
+Beginn steht eine Begrüßung, in der der Chatbot die Nutzer:innen
+willkommen heißt und in das Gespräch einführt. Anschließend fragt der Chatbot
+entweder nach dem Namen, wenn die personalisierte Variante aktiv ist, oder direkt
+was Nutzer:innen über die App erfahren möchten, wenn die unpersonalisierte Variante aktiv ist.
+Die höflichkeitsbezogene Variable bestimmt während der gesamten Konversation
+die Ansprache und den Tonfall des Chatbots. 
+
+Der Hauptteil des Chatbots besteht aus mehreren inhaltlichen Blöcken,
+welche die wichtigsten Informationen zur App \textit{Jobbing}
+bereitstellen. Dazu zählen insbesondere:
+\begin{itemize}
+    \item eine allgemeine Beschreibung der App,
+    \item die Vorteile von \textit{Jobbing},
+    \item Informationen zum App-Download,
+    \item sowie zielgruppenspezifische Inhalte für Gastronom:innen und
+    Jobsuchende.
+\end{itemize}
+
+Wenn der Chatbot personalisiert kommuniziert, fragt er Nutzer:innen ob sie 
+Jobsuchende oder Gastronom:innen sind, speichert diese Information und erklärt
+anschließend die Vorteile der App anhand der jeweiligen Perspektive. Ansonsten
+erklärt der Chatbot die Vorteile der App aus einer neutralen Perspektive.
+
+Wenn das \textit{conversation-end} Intent getriggert wird, oder für längere 
+Zeit keine Nachrichten gesendet werden folgt eine
+Feedback-Phase, in der die Nutzer:innen ihre Zufriedenheit bewerten und
+optional zusätzliches Feedback abgeben können.
+
+\subsection{Konversationslogik}
+
+Die Logik des Chatbots wurde so angelegt, dass sie sowohl
+strukturierte Gesprächsverläufe als auch freiere Eingaben
+verarbeiten kann. Für die gut definierbaren Interaktionen innerhalb
+des Chats wurden feste Gesprächsblöcke mit vorgegebenen
+Antwortmöglichkeiten verwendet. Dazu zählen vor allem die
+Begrüßung, die Rollenabfrage, die Informationsblöcke und der
+Feedbackprozess.
+
+Daneben war eine flexiblere Verarbeitung von Eingaben der
+Nutzer:innen vorgesehen. Neben den vorgegebenen Optionen konnten
+die Nutzer:innen auch eigene Fragen an das System stellen. Diese
+Fragen wurden gespeichert und anschließend in die passenden
+Gesprächspfade eingeordnet. So wurde der Chatbot nicht auf einen
+rein linearen Ablauf festgelegt, sondern konnte auch auf freiere
+Interaktionen reagieren.
+
+Die Konversationslogik wurde so aufgebaut, dass sie einerseits
+steuern kann und andererseits genug Spielraum hat, um
+natürlichere Reaktionen auf das Verhalten der Nutzer:innen
+zulassen. Ein Mittelweg zwischen strikter Regelbefolgung und offener
+KI-Interaktion konnte so gefunden werden.
+
+\subsection{Variablen und Zustandsverwaltung}
+
+Für die Steuerung der Konversation kamen verschiedene Variablen zum Einsatz, 
+die während des Gesprächs gesetzt und aktualisiert wurden. Diese Variablen 
+ermöglichten sowohl die Personalisierung als auch die spätere Auswertung des 
+Nutzerverhaltens.
+
+Zu den wichtigsten Variablen zählten:
+\begin{itemize}
+    \item \texttt{user\_name} zur Speicherung des Namens,
+    \item \texttt{user\_role} zur Unterscheidung zwischen
+    Gastronom:in und Jobsuchende:r,
+    \item \texttt{requested\_download} zur Erfassung eines
+    Download-Interesses,
+    \item \texttt{feedbackRating} und \texttt{feedbackMessage} zur
+    Speicherung des Feedbacks,
+    \item \texttt{messageCount} zur Zählung der ausgetauschten
+    Nachrichten
+\end{itemize}
+
+Eine weitere Variable speicherte den Gesprächsverlauf, sodass sowohl Nutzerfragen 
+als auch Antworten des Chatbots protokolliert werden konnten.
+
+\subsection{Rollenbasierte Kommunikation}
+
+Ein zentrales Merkmal des Chatbots war die Ansprache unterschiedlicher Zielgruppen. 
+Da sich die App \textit{Jobbing} sowohl an Gastronomiebetriebe als auch an Jobsuchende 
+wendet, wurde eine rollenbasierte Ansprache gewählt. Die Nutzer:innen konnten 
+im Gesprächsverlauf angeben, welcher Zielgruppe sie angehören. Diese Rückfrage 
+wurde dann für den weiteren Dialog genutzt, um die Informationen stärker auf die 
+jeweilige Perspektive zuzuschneiden.
+
+So standen für Gastronom:innen vor allem Informationen zur schnellen Rekrutierung 
+kurzfristiger Arbeitskräfte im Vordergrund, während sich für Jobsuchende 
+Flexibilität, Verfügbarkeit von Einsätzen sowie die einfache Auffindbarkeit 
+passender Stellen anboten. Auf diese Weise war es möglich, dieselbe App zwei 
+unterschiedlichen Nutzungsperspektiven entsprechend zu erklären.
+
+\subsection{Experimentelle Varianten des Chatbots}
+
+Um im Rahmen der Diplomarbeit herauszufinden, wie sich Personalisierung und 
+Tonalität auf das Verhalten von Nutzer:innen auswirkt, wurde der Chatbot in 
+verschiedenen Varianten realisiert. Zu Beginn einer Session wurde den Nutzer:innen 
+zufällig eine Kommunikationsstrategie zugewiesen, die dann für die gesamte 
+Session gültig blieb.
+
+Die Varianten unterschieden sich in zwei Dimensionen:
+\begin{itemize}
+    \item dem Grad der Personalisierung,
+    \item sowie der sprachlichen Tonalität.
+\end{itemize}
+
+Daraus ergaben sich vier Kombinationen:
+\begin{itemize}
+    \item formeller Ton mit geringer Personalisierung,
+    \item informeller Ton mit geringer Personalisierung,
+    \item formeller Ton mit stärkerer Personalisierung,
+    \item informeller Ton mit stärkerer Personalisierung.
+\end{itemize}
+
+Die Personalisierung wurde beispielsweise über die Verwendung des Namens,
+eine stärkere Anpassung der Ansprache, oder die Frage nach der Berufsgruppe
+ umgesetzt. Die Tonalität wurde
+über den Stil der Antworten verändert, etwa durch eine formellere oder
+lockerere Sprache.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{pics/variant-routing.png}
+    \caption{Festlegung der Chatbot-Variante zu Beginn einer Session}
+    \label{fig:impl:variantrouting}
+\end{figure}
+
+\subsection{Fallback- und Fehlerbehandlung}
+
+Ein wesentlicher Bestandteil der Umsetzung war auch der Umgang mit Eingaben, die 
+nicht eindeutig interpretiert werden konnten, oder die nicht in den Themenbereich 
+der App passten.
+Hierzu waren mehrere Mechanismen vorgesehen.
+
+Zum einen wurden allgemeine Off-Topic-Fragen erkannt und erhielten dann eine
+neutrale Rückmeldung. Der Gesprächsverlauf wurde dann wieder in die eigentlichen
+Themen rund um \textit{Jobbing} gelenkt.
+
+Für unverständliche Eingaben wurde ein Fallback-Block verwendet, der den Nutzer:innen
+mitteilte, dass die Eingabe nicht korrekt verarbeitet werden konnte.
+Zudem war auch ein No-Reply-Verhalten erwünscht, um auf Inaktivität zu reagieren.
+Diese Mechanismen waren nötig, um den Chatbot robuster zu machen und eine
+konsistente Nutzererfahrung auch bei unerwarteten Eingaben zu ermöglichen.
+
+\subsection{Feedback-Erfassung}
+
+Am Ende des Gesprächs war dann ein Feedbackprozess eingebaut. Nutzer:innen konnten 
+angeben, wie hilfreich sie den Chatbot fanden und auch freies Textfeedback 
+hinterlassen. Damit sollte nicht nur eine subjektive Bewertung des Systems erfasst, 
+sondern auch ein qualitativer Einblick in mögliche Probleme oder 
+Verbesserungsvorschläge gewonnen werden.
+
+Die Feedback-Erfassung war für die Diplomarbeit besonders wichtig, da sie eine 
+direkte Brücke zwischen technischer Umsetzung und späterer Evaluation schlägt. 
+Während Interaktionsdaten wie Gesprächsdauer oder Nachrichtenanzahl eher 
+objektive Nutzungsindikatoren darstellen, liefert das Feedback zusätzliche 
+Informationen zur wahrgenommenen Qualität des Systems.
+
+\subsection{Zwischenfazit}
+
+Der Chatbot wurde als strukturierten und zugleich flexibel reagierenden 
+Gesprächsagenten realisiert. Die Konversation vereint feste Informationsblöcke, 
+rollenbasierte Kommunikation, experimentelle Variantenbildung und 
+Feedbackerfassung. Dies ergibt ein dialogbasiertes System, das sowohl als 
+Informationskanal als auch als Untersuchungsgegenstand der späteren Evaluation 
+dient.
+
+Die Realisierung des Chatbots bildet somit eine zentrale Grundlage zur Analyse 
+der Forschungsfragen, insbesondere hinsichtlich der Wirkung von Personalisierung, 
+Tonalität und dialogischer Nutzerführung.
 
 \setauthor{\firstauthor}
 \subsection{Integration des Chatbots in die Website}
