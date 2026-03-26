@@ -51,9 +51,200 @@ Durch die Kombination dieser Technologien entsteht ein umfassender
 Tech-Stack, der sowohl die Entwicklung zweier unterschiedlicher Funnel-Ansätze 
 als auch deren Analyse im Rahmen dieser Arbeit ermöglicht.
 
+\setauthor{\secondauthor}
 \section{Voiceflow}
 
+Voiceflow ist eine Collaborative-Low-Code-Plattform zur Entwicklung 
+dialogbasierter KI-Systeme. Sie ermöglicht die Erstellung, Verwaltung und 
+Integration sowohl von Chat- als auch Voice-Agents in beliebige Nutzungskontexte. 
+Durch die Kombination grafischer Workflow-Modellierung mit Funktionen moderner 
+KI-Systeme ist es möglich, Agents zu erstellen, die nicht nur vordefinierte 
+Gesprächspfade abarbeiten, sondern auch flexibel auf die Eingaben der Nutzer 
+reagieren.
+
+Im gegensatz zu einer rein codebasierten Lösung bietet Voiceflow die Möglichkeit,
+vordefinierte Gesprächsflüsse zu erstellen. Diese können durch die Grafische 
+Oberfläche übersichtlich geordnet und strukturiert werden, wodurch die Veränderung
+und überkreuzung von Gesprächspfaden deutlich erleichtert wird. Dies ist von großem
+Vorteil für diese Arbeit, da es die schrittweise Infromationsvermittlung in fix 
+definierten Abschnitten erleichtert und auch die Testung verschiedener 
+Gesprächsverläufe ermöglicht.
+
+\subsection{Grundprinzip von Voiceflow}
+
+Das Hauptkonzept von Voiceflow ist es, die Gesprächsführung in strukturierte 
+Workflows zu verpacken. Gemäß ihrer offiziellen Dokumentation können Agents dabei 
+agentisch, deterministisch oder auch hybrid modelliert werden.
+
+Ein deterministischer Ansatz beschreibt eine statische, regelbasierte Struktur, 
+deren jedes Gesprächslevel und jede Verzweigung sicher im Vorfeld ausgelegt sind. 
+Hierdurch erhält man eine hohe Kontrolle über die Konversation und kann damit gut 
+strukturierte Abläufe abbilden.
+
+Ein agentischer Ansatz hingegen bedeutet, dass ein Agent mit einem Sprachmodell 
+in der Lage ist, offene Nutzereingaben zu interpretieren, Wissen abzurufen, 
+Werkzeuge zu benutzen und je nach Gesprächskontext recht flexibel zu reagieren. 
+Letztere Form wird in Voiceflow über den Agent Step realisiert.\cite{VoiceflowDocs}
+
+Besonders diese Mischung aus strukturiertem Vorgehen und Möglichkeiten zum Spiel 
+mit der KI ist Voiceflow für Dialoganwendungen interessant. So lassen sich sowohl 
+klassischere Gesprächslogiken wie auch lockerere Frage-Antwort-Situationen auf 
+derselben Plattform abbilden.
+
+\subsection{Zentrale Funktionen von Voiceflow}
+
+\subsubsection{Schrittbasierte Workflow-Modellierung}
+
+Eine wesentliche Eigenschaft von Voiceflow ist die Erstellung von Agents durch
+sogenannte \textit{Steps}. Voiceflow unterscheidet dabei zwischen Talk Steps,
+Listen Steps, Logic Steps und Dev Steps.
+
+\begin{itemize}
+    \item \textbf{Talk Steps} dienen dazu, Ausgaben durchzuführen.
+    \item \textbf{Listen Steps} dienen der Erfassung von Eingaben der
+    Nutzer:innen.
+    \item \textbf{Logic Steps} ermöglichen das einbauen von Bedingungen um den 
+    Gesprächsverlauf zu steuern.
+    \item \textbf{Dev Steps} können eingebunden werden um technische Funktionen 
+    wie API calls durchzuführen.
+\end{itemize}
+
+Dieser Aufbau ermöglicht es, die einzelnen Schritte des Verlaufes aufzuteilen,
+wiederzuverwenden und zu koordinieren, indem die Blöcke miteinander verbunden werden.
+Der Agent folgt dann den Verbindungen zwischen den Steps und wählt anhand der
+Logic Steps den richtigen Pfad.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{pics/voiceflow-flow-ausschnitt.png}
+    \caption{Ausschnitt aus einem Voiceflow-Workflow}
+    \label{fig:technologies:flow}
+\end{figure}
+
+\subsubsection{Agent Step}
+
+Der Agent Step ist eine der zentralen Komponenten moderner Voiceflow-Projekte.
+dieser Schritt kann Nutzereingaben interpretieren, auf eine
+Wissensbasis zugreifen, Funktionen aufrufen und je nach Bedingungen verschiedene 
+Gesprächspfade auslösen. Damit kommt dem Agent Step eine Art koordinierende Rolle 
+im System zu.
+
+Für dialogische Anwendungen ist das besonders interessant, weil sich offene 
+Fragen nicht mehr zwingend über eine große Menge fixer Regeln oder einzelner 
+Intents abbilden lassen. Der Agent kann auch Kontext mit einbeziehen und 
+dynamisch Antworten erzeugen. So wird Voiceflow leistungsfähiger als rein 
+regelbasierte Chatbot-Systeme, solange gleichzeitig genug kontrollierte 
+Gesprächsstruktur bleibt.
+
+\subsubsection{Variablen}
+
+Voiceflow bietet Variablen an, um Informationen während einer laufenden 
+Konversation zu speichern und wiederzuverwenden.
+Nach der Dokumentation sind Variablen eine Art temporärer Speicher für 
+Informationen im Kontext, z. B. für Namen, Zustände oder Ergebnisse aus 
+vorherigen Schritten.
+
+Für dialogische Systeme ist dies ein wichtiges Fundament, denn ohne Variablen 
+gibt es keine kontextbezogene Reaktion. Variablen ermöglichen es, Informationen 
+während eines Gesprächs zu speichern und später z. B. zur Personalisierung, für 
+die Entscheidungslogik oder zum Steuern von Gesprächsverzweigungen zu nutzen.
+
+\subsubsection{Knowledge Base}
+
+Eine weitere funktionale Möglichkeit bieten mir laut Dokumentation die Knowledge
+Bases. Diese dienen als zentraler Speicher für Inhalte, auf die ein Agent während 
+eines Gespräches zugreifen kann. Über die Knowledge Base lassen sich Informationen 
+also strukturiert hinterlegen und organisieren und damit in Antworten einbeziehen.
+
+Besonders im Zusammenspiel mit dem Agent Step ist dies relevant. Hier vermag der 
+Agent Wissen aus der Knowledge Base nicht nur direkt wiederzugeben, sondern auch 
+kontextabhängig zu verarbeiten und in eine natürlich formulierte Antwort zu 
+integrieren. Aus technologischer Sicht erweitert dies den Agenten von einem 
+reinen Gesprächssystem hin zu einem wissensgestützten Informationssystem.
+
+\subsubsection{API-Anbindung}
+
+Mit dem API Step unterstützt Voiceflow das Anbinden externer Schnittstellen. 
+Damit können HTTP-Anfragen verschiedener Typen (GET, POST, PUT, DELETE, PATCH) 
+versendet und die Antworten wieder in Variablen gespeichert werden. Somit kann 
+ein Agent also auch externe Dienste oder Datensysteme einbinden, oder 
+Informationen an externe Systeme weitergeben.
+
+Diese Möglichkeit ist für viele produktionsnahe Anwendungen wichtig, da Chatbots 
+nicht selten nicht isoliert arbeiten, sondern mit anderen Systemen kommunizieren 
+müssen. Damit ist Voiceflow nicht nur für einfache Prototypen, sondern auch für 
+Systeme geeignet, die mit externer Logik oder zusätzlichen Datenquellen verbunden 
+werden.
+
+\subsection{Warum Voiceflow für das Projekt sinnvoll ist}
+
+Voiceflow bietet für das vorliegende Projekt gleich mehrere Vorteile.
+
+Erstens ermöglicht es eine schnelle, beliebig anpassbare und nachvollziehbare 
+Modellierung von dialogischen Prozessen. Da im Projekt ein Chatbot entwickelt 
+werden soll, der Nutzer:innen strukturiert durch einen Informationsprozess führt, 
+ist eine leicht zu verändernde grafische Gesprächslogik von Vorteil.
+
+Zweitens unterstützt Voiceflow sowohl feste als auch flexible Kommunikationsformen.
+Dies ist für das Projekt von Bedeutung, weil einerseits eine kontrollierte 
+Nutzerführung benötigt wird, andererseits aber auch auf offene Fragen der 
+Nutzer:innen reagiert werden können soll. Diese Kombination aus regelbasierten 
+Workflows und Agent Step bietet die passende technologische Grundlage.
+
+Drittens lassen sich mit Voiceflow zentrale Mechanismen umsetzen, die für die 
+wissenschaftliche Untersuchung im Projekt von Belang sind. Hierzu gehören 
+insbesondere Variablen zur Zustandsverwaltung, Bedingungen zur Steuerung 
+unterschiedlicher Gesprächsstrategien sowie die Möglichkeit, Inhalte einer 
+Knowledge Base einzubinden oder über APIs externe Systeme anzusprechen.
+
+Somit eignet sich Voiceflow nicht nur als Tool zur Erstellung eines 
+Chatbot-Prototyps, sondern als Entwicklungsumgebung, in der sich unterschiedliche 
+kommunikative Varianten eines Chatbots systematisch modellieren und vergleichen 
+lassen.
+
 \section{Alternativen zu Voiceflow}
+
+Neben Voiceflow stehen für die Entwicklung dialogbasierter Systeme zahlreiche weitere
+Plattformen und Frameworks zur Verfügung. Im Rahmen dieser Diplomarbeit waren insbesondere
+\textit{Botpress} und \textit{Rasa} als Alternativen von Bedeutung, da beide Lösungen zum
+Entwickeln von Chatbots und Conversational Agents eingesetzt werden können. Die Auswahl
+geeigneter Werkzeuge stellt dabei nicht nur eine technische, sondern auch eine
+konzeptionelle Entscheidung dar, da sich die verfügbaren Plattformen deutlich hinsichtlich
+Abstraktionsniveau, Entwicklungsmodell, Kontrollmöglichkeiten und Integrationsaufwand
+unterscheiden.
+
+\subsection{Botpress}
+
+Botpress ist eine Plattform zur Entwicklung KI-gestützter Agents. Sie kann sowohl
+für Support, Automatisierung und Benutzerinteraktion verwendet werden.
+Botpress bietet Funktionen zur Modellierung von Gesprächsabläufen, zur Integration 
+externer Systeme sowie zur Einbettung von Agents in digitale Anwendungen. 
+Damit ist Botpress für Projekte geeignet, in denen Chatbots als Bestandteil eines 
+umfassenderen Agent-Systems betrachtet werden.
+
+Im Vergleich zu Voiceflow ist Botpress vor allem 
+als vollständige Agent-Plattform ausgerichtet. Während Voiceflow stark auf die 
+visuelle Modellierung einzelner dialogischer Abläufe fokussiert ist, versteht 
+sich Botpress stärker als Umgebung für die Entwicklung und den Betrieb 
+umfassender KI-Agents. Für diese Arbeit ist Botpress deshalb eine 
+interessante Alternative, weil es ähnliche Anwendungsbereiche adressiert, den 
+Schwerpunkt jedoch etwas anders setzt.
+
+\subsection{Rasa}
+
+Rasa ist eine Plattform zur Entwicklung konversationeller KI-Systeme, die oft in 
+Zusammenhang mit text- und sprachbasierten Assistenten genannt wird. Sie 
+gestattet die Modellierung von Gesprächslogik und die Verarbeitung von 
+Nutzereingaben und erlaubt die Anknüpfung an weitere Komponenten zur Steuerung 
+von Konversationen.
+
+Im Unterschied zu stärker workflowbezogenen Plattformen ist Rasa besonders darauf 
+angelegt, dialogische Systeme als Teil einer größeren 
+Conversational-AI-Architektur zu denken. Deshalb ist Rasa vor allem für Projekte 
+geeignet, bei denen der Chatbot nicht nur als Interface, sondern als zentraler 
+Bestandteil eines umfassenden Systems angesehen wird. Für die Diplomarbeit war 
+Rasa deshalb als Alternative von Bedeutung, weil es eben auch die Entwicklung 
+strukturierter und erweiterbarer Chatbots gestattet.
 
 \setauthor{\firstauthor}
 \section{Framer}
@@ -108,11 +299,84 @@ Alternativen auf. Dazu zählen unter anderem:
     eigener CSS-Styles.
 \end{itemize}
 
+\setauthor{\secondauthor}
 \section{Quarkus}
 
-\section{Datenbank}
+Quarkus ist ein modernes Java-Framework zur Entwicklung cloud-nativer Anwendungen.
+Laut eigener Projektbeschreibung wurde Quarkus als eine performant und 
+entwicklungsfreundliche Plattform für Java-Anwendungen konzipiert. Das Framework 
+unterstützt sowohl imperative als auch reaktive Programmiermodelle und integriert 
+viele bekannte Java-Bibliotheken und -Standards \cite{QuarkusAbout,QuarkusHome}.
+
+Quarkus ist für die Diplomarbeit von Bedeutung, weil es sich zur Entwicklung von 
+REST-Schnittstellen und datenbankgestützten Backend-Komponenten einsetzen lässt. 
+Es unterstützt eine strukturierte Entwicklung der serverseitigen Logik und hat 
+eine einheitliche Konfiguration für die gängigen Anwendungsfälle. In der 
+offiziellen Dokumentation wird zudem darauf hingewiesen, daß Quarkus gezielt auf 
+hohe Startgeschwindigkeiten, geringe Ressourcennutzung und eine gute Developer 
+Experience optimiert ist \cite{QuarkusAbout,QuarkusHome}.
+
+Im Projekt dient Quarkus als Framework für die Verarbeitung und Bereitstellung von
+Nutzerdaten, die vom Chatbot gesammelt und via HTTP an den Server gesendet werden.
+Quarkus ermöglicht ein einfaches Aufsetzen von REST-Endpunkten, welche die Daten
+für die visuelle Aufbereitung und Analyse bereitstellen.
 
 \section{D3.js}
+
+D3.js ist eine JavaScript-Bibliothek zur Entwicklung datengetriebenen 
+Visualisierungen im Web. Der Name der Bibliothek — „Data-Driven Documents“ 
+(Datengetriebene Dokumente) — beschreibt den zentralen Ansatz von D3.js: 
+Daten werden direkt mit Elementen einer Webseite verknüpft, sodass sie nicht nur 
+grafisch dargestellt, sondern auch dynamisch verarbeitet, gefiltert und 
+interaktiv visualisiert werden können.
+
+Im Unterschied zu vielen anderen Visualisierungsbibliotheken bietet D3.js keine 
+fertigen Diagrammarten in den Vordergrund, sondern eine Sammlung von Modulen und 
+Funktionen, mit deren Hilfe sich Visualisierungen individuell aufbauen lassen. 
+Dazu gehören etwa Mechanismen zur Auswahl und Bearbeitung von DOM-Elementen, zur 
+Skalierung von Daten auf visuelle Werte, zur Erzeugung von Achsen, Formen und 
+Kurven und zur Einbindung von Animationen und Interaktionen. Dies macht D3.js 
+besonders flexibel und prädestiniert für Anwendungen, in denen Standarddiagramme 
+nicht ausreichen oder in denen die Visualisierung sehr genau an projektspezifische 
+Anforderungen angepaßt werden soll.
+
+D3.js arbeitet mit den o.a. Webstandards SVG, HTML und CSS. Visualisierungen sind 
+damit nicht isolierte Grafiken, sondern Bestandteil der Anwendung, d.h. sie sind 
+eng mit den Daten, ihrer Darstellung und der Nutzerinteraktion verbunden. 
+Diagramme können so auf der Basis aktueller Daten jederzeit neu aufgebaut, 
+gefiltert oder animiert werden, ohne dass dazu Grafikprogramme oder 
+Renderprozesse notwendig sind.
+
+Für analytische Anwendungen ist D3.js interessant, da Daten schrittweise in 
+visuelle Eigenschaften übersetzt werden können. Numerische Werte lassen sich z.B. 
+in Positionen, Größen oder Farben abbilden, kategoriale Werte in Gruppen oder 
+Achsenbeschriftungen. Der Zusammenhang, die Verteilung oder die Unterschiede 
+zwischen Datensätzen lassen sich so strukturiert und verständlich darstellen. 
+Gleichzeitig bleibt die konkrete Gestaltung aber weitgehend offen, Diagramme 
+können an die Anforderungen eines Projekts angepasst werden.
+
+Ein weiterer Vorteil der D3.js Bibliothek besteht in der Möglichkeit, interaktive 
+Dashboards zu erstellen, so können Nutzer:innen durch Hover-Effekte, Filter, 
+Animationen oder dynamisches Nachladen stärker in die Auswertung eingebunden 
+werden. Dies ist dann besonders sinnvoll, wenn Daten nicht nur statisch 
+präsentiert sondern aktiv analysiert werden sollen, D3.js kann hier dann helfen, 
+Muster und Unterschiede im Verhalten der Nutzer:innen besser sichtbar zu machen.
+
+In dieser Hinsicht ist D3.js auch für diese Diplomarbeit besonders geeignet, 
+denn die erfassten Nutzungsdaten sollen nicht nur gespeichert werden, sondern 
+auch grafisch ausgewertet. Kennzahlen wie Gesprächsdauer, Anzahl versandter 
+Nachrichten, Feedback-Werte oder Unterschiede zwischen Nutzergruppen sind mit 
+einer datengetriebenen Visualisierung gut darstellbar. Damit unterstützt die 
+Bibliothek den analytischen Teil dieses Projektes und hilft, die erhobenen Daten 
+verständlich aufzubereiten.
+
+Zusammenfassend ist D3.js eine mächtige Bibliothek zur Erstellung flexibler, 
+webbasierter und interaktiver Datenvisualisierungen. Ihre Stärke liegt dabei 
+weniger in der schnellen Erstellung fertig vorgefertigter Standarddiagramme, 
+sondern vielmehr in der Möglichkeit, Visualisierungen sehr genau auf die 
+Bedürfnisse eines Projektes anzupassen und eng mit einer webbasierten 
+Analyseumgebung zu verknüpfen.
+\cite{D3Home}
 
 \setauthor{\firstauthor}
 \section{Nutzerdatenerfassung}
