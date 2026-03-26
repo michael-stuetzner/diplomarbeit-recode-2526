@@ -1,5 +1,15 @@
 \section{Gesamtarchitektur}
 
+Das Projekt besteht aus mehreren Komponenten, die miteinander interagieren. 
+Im frontend wurde mit Framer einerseits der Multi-Step-Funnel und andererseits
+der Chatbot als Voiceflow Agent implementiert. Der Chatbot ist auch durch Framer
+in eine Website integriert, die als zentrale Anlaufstelle für Nutzer:innen dient.
+
+Der Chatbot kommuniziert einerseits mit einem Quarkus Server, welcher Nutzerdaten
+speichert und für ein Frontend zur Datenvisualisierung bereitstellt.
+Außerdem Sammeln Microsoft Clarity und Google Analytics Daten über die Nutzung der
+Website und des Chatbots, um das Nutzerverhalten zu analysieren.
+
 \setauthor{\firstauthor}
 \section{Multi-Step-Funnel}
 \subsection{Erstellung der Website}
@@ -678,13 +688,145 @@ Umsetzung der beiden Vergleichsvarianten effizient durchgeführt werden.
 
 \subsection{Erstellung des Google Forms}
 
-
+\setauthor{\secondauthor}
 \section{Backend}
+
+\subsection{Aufgabe des Backends}
+
+Das Backend kümmert sich im Projekt um die serverseitige Verarbeitung und Speicherung der Daten, die im
+Verlauf der Nutzerinteraktion entstehen. Der Chatbot und der Multi-Step-Funnel stellen sich den Nutzer:innen als direkte
+Interaktionsoberflächen zur Verfügung, das Backend speichert Nutzerdaten über den Chatbot 
+und macht sie wieder zugänglich.
+
+\subsection{Architektur und Aufbau}
+
+Das Backend wurde als REST-Anwendung entwickelt. Es bietet HTTP-Schnittstellen an, 
+über welche externe Komponenten Daten an das System übermitteln und später 
+abholen können. Damit wurde eine klare Trennung von Frontend, Chatbot und 
+serverseitiger Datenverarbeitung erreicht.
+
+Die Anwendung ist nach dem Repository-Pattern aufgebaut. Das Datenmodell bildet die zu 
+speichernden Informationen ab. Repository-Klassen sind für den Zugriff auf die 
+Datenbank zuständig. Resource-Klassen liefern die REST-Endpunkte, über die 
+Anfragen an das Backend gesendet werden können. Diese Struktur ermöglicht eine 
+klare Trennung zwischen Datenhaltung und Zugriffsschnittstelle.
+
+\subsection{Datenmodell}
+
+Für die Speicherung der Nutzungsdaten wurde ein einfaches Datenmodell erstellt, 
+das die für die Evaluation benötigten Daten enthält. Zu diesen Daten gehören 
+insbesondere die Zeitpunkte für den Gesprächsbeginn und das -ende, die 
+Nutzerrolle, das Download-Interesse, die Anzahl der ausgetauschten Nachrichten 
+sowie Feedback-Werte und Freitext-Feedback.
+
+Das zentrale Modellobjekt besteht aus der Klasse UserData, welche einen 
+Nutzungsvorgang, eine Session also, beschreibt und sämtliche Messwerte speichert, 
+die für die Analyse später benötigt werden. Durch diese Struktur konnten die 
+Daten einheitlich gespeichert und ohne weitere Umwandlungsschritte 
+weiterverarbeitet werden.
+
+Ebenfalls die Nutzerrolle wurde über einen Enum-Typ modelliert, um die 
+Unterscheidung zwischen Gastronom:innen und Jobsuchenden konsistent und 
+typsicher zu gestalten. So können spätere Auswertungen nach Zielgruppen 
+einfacher erfolgen.
+
+\begin{lstlisting}[
+    language=Java,
+    caption=Ausschnitt Datemodell der UserData-Klasse,
+    label=lst:impl:userdata
+]
+@Entity
+@Table(name = "user_data")
+public class UserData {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDateTime chatStartTime;
+    private LocalDateTime chatEndTime;
+    private String userName;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole userRole;
+    private boolean requestedDownload;
+    private int FeedbackRating;
+    private int messageCount;
+    private String feedbackMessage;
+\end{lstlisting}
+
+\subsection{REST-Schnittstellen}
+
+Das Backend stellt REST-Endpoints zur Verfügung, über die sowohl Nutzungsdaten 
+gesendet als auch ausgelesen werden können. Die Schnittstellen sind so gestaltet, 
+dass sie sowohl während bzw. am Ende einer Session zur Speicherung der Datensätze 
+als auch zu einem späteren Zeitpunkt zur Analyse verwendet werden können.
+
+Ein zentraler Endpoint stellt alle gespeicherten Datensätze als JSON-Struktur 
+gesammelt bereit, von der andere Systemkomponenten, insbesondere das 
+Analyse-Frontend, die Daten abrufen und visualisieren kann.
+
+Die REST-Schnittstellen haben wir bewusst einfach gehalten, da im Projekt nicht 
+die Komplexität einer umfassenden Geschäftslogik im Vordergrund stand, sondern 
+die zuverlässige Speicherung und Bereitstellung von Messdaten. Dies ermöglichte 
+eine transparente und übersichtliche Verarbeitung der Daten.
 
 \section{Datenvisualisierung}
 
+Die während des Projekts erhobenen Daten sollten nicht nur gespeichert,
+sondern auch so aufbereitet werden, dass sie später zur Analyse des
+Nutzerverhaltens herangezogen werden konnten. Zu diesem Zweck war eine
+Visualisierung der gesammelten Daten vorgesehen, die Unterschiede
+zwischen einzelnen Chatbot-Varianten sowie zwischen Chatbot und MultiStep-Funnel übersichtlich darstellen und damit eine Grundlage zur
+späteren Evaluation schaffen sollte.
 
-Siehe tolle Daten in Tab. \ref{tab:impl:data}.
+Im Mittelpunkt der Visualisierung standen vor allem solche Kennzahlen, die
+direkt mit dem Verhalten der Nutzer:innen in Beziehung stehen. Hierzu zählen
+unter anderem Gesprächs- bzw. Sitzungsdauer, Anzahl der
+Interaktionen, Downloadinteresse und Feedback-Werte. Durch die grafische
+Aufbereitung dieser Daten konnten Muster im Nutzungsverhalten leichter
+erkannt und die Wirkung einzelner Kommunikationsstrategien
+nachvollziehbarer gemacht werden.
+
+Für die Darstellung wurden insbesondere solche Diagrammformen gewählt,
+die sich zum Vergleich von Gruppen und Varianten eignen. Rückschlüsse auf
+Häufigkeit und Durchschnittswerte wurden in Balkendiagrammen
+visuell aufbereitet, so etwa die durchschnittliche Zufriedenheit
+unterschiedlicher Nutzergruppen oder Varianten. Auch Verteilungen und
+Zusammenhänge zwischen verschiedenen Messwerten, wie etwa zwischen
+Nachrichtenanzahl und Feedback, konnten durch grafische
+Aufbereitung sichtbar gemacht werden. Die Visualisierung sollte
+nicht nur der Präsentation, sondern auch der internen Analyse während der
+Projektarbeit dienen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.25]{pics/message-count-diagram.png}
+    \caption{Diagramm der durchschnittlichen Anzahl an Nachrichten pro Nutzergruppe}
+    \label{fig:impl:messagecountdiagram}
+\end{figure}
+
+Wesentlich war es zudem, dass die erhobenen Daten sowohl aus dem Chatbot, als
+auch aus dem Multi-Step-Funnel in ähnlicher Form betrachtet werden können.
+Die Datenvisualisierung wurde so angelegt, dass beide Informationsstrategien anhand
+ähnlicher Kennzahlen untersucht werden können. Damit eine gleichartige
+Basis für den späteren Vergleich der beiden Konzepte gegeben ist.
+
+Für die eigentliche Evaluierung des Nutzerverhaltens haben wir schließlich
+neben den selbst erhobenen Projektdaten auch die Werkzeuge Microsoft
+Clarity und \textit{Google Analytics} verwendet. \textit{Microsoft Clarity} bietet
+insbesondere Session Recordings und Heatmaps, womit sichtbar gemacht
+werden kann, wo Nutzer:innen klicken, scrollen oder Interaktionsprobleme
+haben. Auch lassen sich damit ganz konkret Nutzungssitzungen
+nachvollziehen.
+\textit{Google Analytics} wurde ergänzend verwendet, um zentrale Kennzahlen
+zur Nutzung der Website und der Informationspfade systematisch
+auszuwerten und damit die digitale Strategie messbar zu machen. Für das
+Projekt erwies sich diese Kombination als sinnvoll, da sie eine bessere
+Vergleichbarkeit zwischen beiden Informationsstrategstrategien
+ermöglichte und gleichzeitig genauere Aufzeichnungen des realen
+Nutzerverhaltens lieferte. Da diese Tracking Tools bereits in der Website 
+integriert waren, war es sinnvoll auch für den Chatbot diese Tools zu verwenden,
+um eine möglichst große Vergleichbarkeit der Daten zu ermöglichen.
 
 %\begin{table}
 %    \centering
@@ -704,9 +846,6 @@ Siehe tolle Daten in Tab. \ref{tab:impl:data}.
   %  \caption{Don Knuth -- CS Allfather}
    % \label{fig:impl:knuth}
 %\end{figure}
-
-Siehe und staune in Abb. \ref{fig:impl:knuth}.
-Dann betrachte den Code in Listing \ref{lst:impl:foo}.
 
 %\begin{lstlisting}[language=Python,caption=Some code,label=lst:impl:foo]
 %# Program to find the sum of all numbers stored in a list (the not-Pythonic-way)
