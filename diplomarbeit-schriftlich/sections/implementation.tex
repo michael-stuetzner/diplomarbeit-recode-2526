@@ -650,7 +650,27 @@ Umsetzung der beiden Vergleichsvarianten effizient durchgeführt werden.
 
 \setauthor{\firstauthor}
 \section{Datenerfassung}
+\setauthor{ \firstauthor}
 \subsection{Framer Analytics}
+Die in \textit{Framer} integrierte Analytics-Funktion ermöglicht 
+die Erfassung von grundlegenden Nutzungsdaten, wie etwa die Anzahl 
+der Besucher:innen, die Verweildauer auf der Seite, die Geräte
+mit denen auf die Seite zugegriffen wurde sowie die 
+Absprungrate. Diese Daten bieten einen ersten Einblick in das 
+Nutzerverhalten und können zur Optimierung der Website genutzt werden.
+
+Die Analytics-Daten können direkt in \textit{Framer} eingesehen 
+werden, wodurch eine einfache und schnelle Analyse der 
+Nutzerinteraktionen möglich ist. Allerdings sind die Möglichkeiten 
+zur Datenanalyse mit dem integrierten Analysetool von \textit{Framer} 
+begrenzt, weshalb für eine detailliertere Auswertung zusätzliche 
+Tools verwendet werden.
+
+Um die Daten mit Framer Analytics zu erfassen sind keine 
+zusätzlichen Schritte notwendig, da die Funktion bereits in 
+die Plattform integriert ist. Sobald die Website veröffentlicht ist, 
+werden automatisch Daten über die Nutzerinteraktionen gesammelt 
+und können über das integrierte Dashboard eingesehen werden.
 
 \subsection{Implementierung von Google Analytics}
 \begin{lstlisting}[
@@ -670,6 +690,24 @@ Umsetzung der beiden Vergleichsvarianten effizient durchgeführt werden.
 </script>
 \end{lstlisting}
 
+Um Google Analytics in die Website zu integrieren, muss der 
+bereitgestellte Code aus Listing \ref{lst:impl:googleanalyticsimplementation} 
+als Custom-Code in die Website eingefügt werden. 
+Dabei ist es wichtig, die eigene Tracking-ID 
+an den entsprechenden Stellen im Code zu ersetzen. 
+Nach der Implementierung werden die Nutzungsdaten automatisch 
+an Google Analytics gesendet und können dort ausgewertet werden.
+
+In Framer muss in den Einstellungen des Projekts unter dem Tab
+\textit{Custom Code} ein neues Script hinzugefügt werden.
+Dort wurde der Name "Google-Analytics" vergeben. 
+Anschließend wurde ausgewählt, dass der Code am Ende
+des Body-Elements eingefügt werden soll, um sicherzustellen, 
+dass alle anderen Inhalte der Seite bereits geladen sind, 
+bevor das Google Analytics Skript ausgeführt wird.
+Zusätzlich wurde ausgewählt, dass das Skript auf allen Seiten
+der Website ausgeführt werden soll.
+
 \subsection{Implementierung von Microsoft Clarity}
 \begin{lstlisting}[
     language=HTML,
@@ -686,7 +724,65 @@ Umsetzung der beiden Vergleichsvarianten effizient durchgeführt werden.
 </script>
 \end{lstlisting}
 
+Um Microsoft Clarity in die Website zu integrieren, muss der 
+bereitgestellte Code aus Listing \ref{lst:impl:microsoftclarityimplementation} 
+als Custom-Code in die Website eingefügt werden. 
+Dabei ist es notwendig, die eigene Tracking-ID an der vorgesehenen 
+Stelle im Code zu ersetzen, damit die erfassten Daten dem richtigen 
+Projekt zugeordnet werden können. Nach der Implementierung beginnt 
+Microsoft Clarity automatisch mit der Aufzeichnung von 
+Nutzerinteraktionen.
+
+In Framer wurde der Code ebenfalls im Tab \textit{Custom Code} 
+hinzugefügt. Das Script wurde mit dem Namen "Clarity" 
+angelegt und so konfiguriert, dass es am Ende des Body-Elements 
+geladen wird. Dadurch wird sichergestellt, dass das Tracking-Skript 
+die Performance der Seite möglichst wenig beeinflusst.
+
+Zusätzlich wurde festgelegt, dass das Skript auf allen Seiten der 
+Website ausgeführt wird, um ein umfassendes Bild des 
+Nutzerverhaltens über den gesamten Funnel zu erhalten.
+
+Microsoft Clarity ermöglicht im Vergleich zu klassischen 
+Analysetools eine detailliertere Analyse des Nutzerverhaltens. 
+Insbesondere können Heatmaps sowie Sitzungsaufzeichnungen erstellt 
+werden, wodurch nachvollzogen werden kann, wie Nutzer:innen mit der 
+Website interagieren. Dadurch lassen sich beispielsweise 
+Scrollverhalten, Klickmuster und potenzielle Abbruchstellen identifizieren.
+
 \subsection{Erstellung des Google Forms}
+
+Für die Erfassung von Feedback und weiteren Informationen von 
+Nutzer:innen wurde ein Google Form erstellt. Dieses Formular wurde 
+so gestaltet, dass es relevante Daten für die spätere Analyse 
+sammelt, wie etwa die Zufriedenheit der Nutzer:innen, 
+Verbesserungsvorschläge oder subjektive Meinungen zu den
+Websites.
+
+Folgende Fragen wurden im Formular aufgenommen:
+\begin{itemize}
+    \item Hast du verstanden, worum es bei Jobbing geht?
+    \item Für wie sinnvoll hältst du den Ansatz den die App \textit{Jobbing} verfolgt?
+    \item Welche Website war für dich einfacher zu verstehen?  
+    \item Welche Website war für dich angenehmer zu bedienen?  
+    \item Welche Website hätte dich eher dazu gebracht, die App herunterzuladen?  
+    \item Wie bewertest du die Benutzerfreundlichkeit?  
+    \item Wie vertrauenswürdig wirkt die Website?  
+    \item Wie überzeugend war die Website?  
+    \item Wie vertrauenswürdig wirkt der Chatbot?  
+    \item Wie überzeugend war der Chatbot?  
+    \item Warum hat dich eine Variante mehr überzeugt und welche?  
+    \item Was hat dir am Multi-Step-Funnel gut oder schlecht gefallen?  
+    \item Was hat dir am Chatbot gut oder schlecht gefallen?  
+    \item Was hat dir gefehlt, um die App wirklich herunterzuladen?  
+\end{itemize}
+
+Es wurde darauf geachtet eine Mischung aus geschlossenen und 
+offenen Fragen zu verwenden, um sowohl quantitative als auch 
+qualitative Daten zu sammeln. Die geschlossenen Fragen 
+ermöglichen eine einfache Auswertung und Vergleichbarkeit, 
+während die offenen Fragen umfassende Einblicke in die subjektiven 
+Erfahrungen der Nutzer:innen bieten.
 
 \setauthor{\secondauthor}
 \section{Backend}

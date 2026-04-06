@@ -1,9 +1,9 @@
-PWD /home/konstantin/Documents/Diplomarbeit/Diplomarbeit-schriftlich/titlepage
+PWD /home/michael/Documents/School/diplomarbeit/diplomarbeit-recode-2526/diplomarbeit-schriftlich/titlepage
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/konstantin/Documents/Diplomarbeit/Diplomarbeit-schriftlich/titlepage/coversheet.tex
+INPUT /home/michael/Documents/School/diplomarbeit/diplomarbeit-recode-2526/diplomarbeit-schriftlich/titlepage/coversheet.tex
 OUTPUT coversheet.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

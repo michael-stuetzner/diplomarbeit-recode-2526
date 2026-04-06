@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.1)  7 JAN 2026 10:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.7.1)  6 APR 2026 16:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/konstantin/Documents/Diplomarbeit/Diplomarbeit-schriftlich/titlepage/coversheet.tex
-(/home/konstantin/Documents/Diplomarbeit/Diplomarbeit-schriftlich/titlepage/coversheet.tex
+**/home/michael/Documents/School/diplomarbeit/diplomarbeit-recode-2526/diplomarbeit-schriftlich/titlepage/coversheet.tex
+(/home/michael/Documents/School/diplomarbeit/diplomarbeit-recode-2526/diplomarbeit-schriftlich/titlepage/coversheet.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -301,14 +301,14 @@ Package rerunfilecheck Info: File `coversheet.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  12761 strings out of 474222
- 193000 string characters out of 5748734
+ 193087 string characters out of 5748734
  1928975 words of memory out of 5000000
  34855 multiletter control sequences out of 15000+600000
  560534 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 92i,6n,95p,602b,2380s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,6n,95p,631b,2380s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb>
-Output written on coversheet.pdf (1 page, 169196 bytes).
+Output written on coversheet.pdf (1 page, 169213 bytes).
 PDF statistics:
  43 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)
